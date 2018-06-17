@@ -49,10 +49,22 @@ describe('compareHands', () => {
             expect(compareHands(inputString)).toEqual('Black wins. - with full house');
         });
     });
-    fdescribe('Given that both Black and White have a full house, but Black\'s matching three is higher', () => {
+    describe('Given that both Black and White have a full house, but Black\'s matching three is higher', () => {
         it('Should report that black has won', () => {
             const inputString = 'Black: AH AC AD KS KH White: QD QS QD JS JH';
             expect(compareHands(inputString)).toEqual('Black wins. - with full house');
+        });
+    });
+    describe('Given that Black has a flush but White has a three of a kind', () => {
+        it('Should report that black has won', () => {
+            const inputString = 'Black: AH 2H AH 3H KH White: QD QS QD 10S JH';
+            expect(compareHands(inputString)).toEqual('Black wins. - with flush');
+        });
+    });
+    describe('Given that Black and White both have a flush, but Black\'s is higher', () => {
+        it('Should report that black has won', () => {
+            const inputString = 'Black: AH KH QH 10H 9H White: KD QD 10D 9D 8D';
+            expect(compareHands(inputString)).toEqual('Black wins. - with flush');
         });
     });
 });
