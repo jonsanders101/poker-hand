@@ -31,4 +31,16 @@ describe('compareHands', () => {
             expect(compareHands(inputString)).toEqual('Black wins. - with four of a kind');
         });
     });
+    describe('Given that Black has a three of a kind and white has a pair', () => {
+        it('Should report that black has won', () => {
+            const inputString = 'Black: AH AC AD KS KH White: KD KS QD JS 10H';
+            expect(compareHands(inputString)).toEqual('Black wins. - with three of a kind');
+        });
+    });
+    describe('Given that both Black and White have a three of a kind, but Black\'s is higher', () => {
+        it('Should report that black has won', () => {
+            const inputString = 'Black: AH AC AD KS KH White: QD QS QD JS 10H';
+            expect(compareHands(inputString)).toEqual('Black wins. - with three of a kind');
+        });
+    });
 });
