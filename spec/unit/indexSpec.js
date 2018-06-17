@@ -79,4 +79,10 @@ describe('compareHands', () => {
             expect(compareHands(inputString)).toEqual('Black wins. - with straight');
         });
     });
+    describe('Given that Black has a two pair and White has one pair', () => {
+        it('Should report that Black has won', () => {
+            const inputString = 'Black: AH AC QH QH 10H White: KD KS QS JD 10D';
+            expect(compareHands(inputString)).toEqual('Black wins. - with two pair');
+        });
+    });
 });
