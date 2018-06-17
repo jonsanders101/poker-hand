@@ -13,4 +13,10 @@ describe('compareHands', () => {
             expect(compareHands(inputString)).toEqual('Black wins. - with straight flush');
         });
     });
+    describe('Given that both hands are straight flushes with the same values, but Black has a higher suit', () => {
+        it('Should report thatblack has won', () => {
+            const inputString = 'Black: AH KH QH JH 10H White: AC KC QC JC 10C';
+            expect(compareHands(inputString)).toEqual('Black wins. - with straight flush');
+        });
+    });
 });
