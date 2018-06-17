@@ -73,4 +73,10 @@ describe('compareHands', () => {
             expect(compareHands(inputString)).toEqual('Black wins. - with straight');
         });
     });
+    describe('Given that Black and White both have a straight, but Black\'s is higher', () => {
+        it('Should report that black has won', () => {
+            const inputString = 'Black: AH KC QH JH 10H White: KD QS JS 10D 9D';
+            expect(compareHands(inputString)).toEqual('Black wins. - with straight');
+        });
+    });
 });
