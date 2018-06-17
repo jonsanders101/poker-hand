@@ -67,4 +67,10 @@ describe('compareHands', () => {
             expect(compareHands(inputString)).toEqual('Black wins. - with flush');
         });
     });
+    describe('Given that Black has a straight and White has a three of a kind', () => {
+        it('Should report that Black has won', () => {
+            const inputString = 'Black: AH KC QH JH 10H White: KD KH KS 10D 9D';
+            expect(compareHands(inputString)).toEqual('Black wins. - with straight');
+        });
+    });
 });
