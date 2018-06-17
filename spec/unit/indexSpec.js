@@ -85,4 +85,10 @@ describe('compareHands', () => {
             expect(compareHands(inputString)).toEqual('Black wins. - with two pair');
         });
     });
+    describe('Given that Black and White both has a two pair, but Black\'s high pair is higher than White\'s high pair', () => {
+        it('Should report that Black has won', () => {
+            const inputString = 'Black: AH AC QH QH 10H White: KD KS QS QD 10D';
+            expect(compareHands(inputString)).toEqual('Black wins. - with two pair');
+        });
+    });
 });
