@@ -26,3 +26,7 @@ Black: 2H 3D 5S 9C KD  White: 2D 3H 5C 9S KH
 ## To Do
 
 * Refactor to refer to 'hand' and 'cards' consistently
+* Make UI
+* Allow multiple hands
+* Deal cards from a deck
+* Report greater detail on winning hand
